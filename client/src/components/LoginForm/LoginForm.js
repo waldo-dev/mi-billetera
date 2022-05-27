@@ -28,9 +28,10 @@ const LoginForm = () => {
 
   return (
     <div className={style.container}>
+      <h2>Ingresar</h2>
       <form onSubmit={(e) => handleLogin(e)}>
         <div className={style.labelInputContainer}>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">EMAIL</label>
           <input
             onChange={(e) => setEmail(e.target.value)}
             type="email"
@@ -39,7 +40,7 @@ const LoginForm = () => {
           />
         </div>
         <div className={style.labelInputContainer}>
-          <label htmlFor="password">Confirmar contraseña</label>
+          <label htmlFor="password">CONTRASENA</label>
           <input
             onChange={(e) => setPassword(e.target.value)}
             type="password"
@@ -51,7 +52,7 @@ const LoginForm = () => {
           Ingresar
         </button>
         <p>
-          ¿No tienes cuenta? <Link to="/signup">Registrate</Link>
+          ¿No tienes cuenta? <Link to="/register">Registrate</Link>
         </p>
       </form>
     </div>

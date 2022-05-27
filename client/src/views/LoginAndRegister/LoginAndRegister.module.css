@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    height: 40rem;
+    margin: 5rem auto;
+}
+
+.sloganContainer{
+    width: 50%;
+    background-color: #63d6c5;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+.LoginRegisterContainer{
+    width: 50%;
+    padding:1rem ;
+    background-color: #324259;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.topContainer{
+    text-align: end;
+}

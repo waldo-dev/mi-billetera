@@ -1,0 +1,33 @@
+.container {
+    width: 30rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.labelInputContainer{
+    display: flex;
+    width: 80%;
+    margin: 2rem auto;
+    flex-direction: column;
+}
+
+.labelInputContainer label {
+    text-align: start;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: rgb(165, 165, 165);
+}
+
+.labelInputContainer input {
+    font-size: 1.2rem;
+    outline: none;
+}
+
+.button{
+    font-size: 1.2rem;
+    background-color: rgb(137, 246, 54);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}

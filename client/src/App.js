@@ -1,9 +1,8 @@
 import React from "react";
 import Home from "./views/Home";
-import RegisterForm from "./views/Register";
-import LoginForm from "./views/Login";
 import { UserProvider } from "./context/userContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginAndRegister from "./views/LoginAndRegister/LoginAndRegister";
 
 function App() {
   return (
@@ -11,8 +10,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/register" element={<RegisterForm />} />
-          <Route path="/login" element={<LoginForm />} />
+          <Route path="/login" element={<LoginAndRegister />} />
         </Routes>
       </BrowserRouter>
     </UserProvider>

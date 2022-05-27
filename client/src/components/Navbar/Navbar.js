@@ -7,14 +7,11 @@ const Navbar = () => {
   const { user } = useUser();
   const navigate = useNavigate();
 
-  useEffect(
-    (navigate) => {
-      if (!user) {
-        navigate("/login");
-      }
-    },
-    [user]
-  );
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    }
+  }, [user]);
   const handleLogout = () => {
     logout();
     navigate("/login");
