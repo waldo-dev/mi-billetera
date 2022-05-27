@@ -1,0 +1,15 @@
+.labelInputContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.labelInputContainer label {
+    text-align: start;
+    margin: 1rem 0;
+}
+
+.labelInputContainer input {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
