@@ -2,11 +2,11 @@ import React from "react";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import style from "./LoginAndRegister.module.css";
-import { useLoginAndRegister } from "../../context/loginAndRegisterContext";
+import { useGlobalContext } from "../../context/globalContext";
 
 const LoginAndRegister = () => {
   const { showLogin, setShowLogin, showRegister, setShowRegister } =
-    useLoginAndRegister();
+    useGlobalContext();
 
   const handleregisterOrLogin = (e, type) => {
     switch (type) {

@@ -1,28 +1,35 @@
 import React, { useEffect } from "react";
-import { useUser } from "../../context/userContext";
+import { useGlobalContext } from "../../context/globalContext";
 import { logout } from "../../actions/userActions";
 import { useNavigate } from "react-router-dom";
+import style from "./Navbar.module.css";
 
 const Navbar = () => {
-  const { user } = useUser();
+  const { user } = useGlobalContext();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!user) {
-      navigate("/login");
-    }
-  }, [user]);
+  useEffect(
+    (navigate) => {
+      if (!user) {
+        navigate("/login");
+      }
+    },
+    [user]
+  );
   const handleLogout = () => {
     logout();
     navigate("/login");
   };
 
   return (
-    <div>
-      <ul>
-        <li>Bienvenid@ {user ? user.name : null}</li>
+    <div className={style.container}>
+      <ul className={style.list}>
+        <li className={style.itemListUser}>{user ? user.name : null}</li>
+        <li className={style.itemListLogo}>Mi Billetera</li>
         <li>
-          <button onClick={() => handleLogout()}>Logout</button>
+          <button className={style.logoutButton} onClick={() => handleLogout()}>
+            Logout
+          </button>
         </li>
       </ul>
     </div>

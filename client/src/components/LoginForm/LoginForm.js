@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./LoginForm.module.css";
 import { login } from "../../actions/userActions";
-import { useUser } from "../../context/userContext";
+import { useGlobalContext } from "../../context/globalContext";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,7 @@ const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { setUser } = useUser();
+  const { setUser } = useGlobalContext();
   const navigate = useNavigate();
 
   const handleLogin = (e) => {

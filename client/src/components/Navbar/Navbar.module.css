@@ -1,0 +1,33 @@
+.container{
+    padding: 0.5rem 1rem;
+    background-color: blue;
+}
+
+.list{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemListUser{
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.itemListLogo{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.logoutButton{
+    font-size: 1.2rem;
+    background-color: red;
+    cursor: pointer;
+    color: #ffffff;
+    border: none;
+    padding: 0.2rem 2rem ;
+}
