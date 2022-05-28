@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import RegisterForm from "../../components/RegisterForm/RegisterForm";
 import LoginForm from "../../components/LoginForm/LoginForm";
 import style from "./LoginAndRegister.module.css";
+import { useLoginAndRegister } from "../../context/loginAndRegisterContext";
 
 const LoginAndRegister = () => {
-  const [showRegister, setShowRegister] = useState(true);
-  const [showLogin, setShowLogin] = useState(false);
+  const { showLogin, setShowLogin, showRegister, setShowRegister } =
+    useLoginAndRegister();
 
   const handleregisterOrLogin = (e, type) => {
     switch (type) {

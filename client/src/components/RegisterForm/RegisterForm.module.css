@@ -4,6 +4,10 @@
     margin: 0 auto;
 }
 
+.title{
+    color: #ffffff;
+}
+
 .labelInputContainer{
     display: flex;
     width: 80%;
@@ -21,6 +25,11 @@
 .labelInputContainer input {
     font-size: 1.2rem;
     outline: none;
+    background: none;
+    backdrop-filter: blur(20px);
+    border-radius: 0.5rem;
+    color: #ffffff;
+    padding: 0.1rem 0.3rem;
 }
 
 .button{
@@ -30,4 +39,9 @@
     padding: 0.5rem 1rem;
     border-radius: 0.2rem;
     cursor: pointer;
+}
+
+.link{
+    color: #ffffff;
+    text-decoration: none;
 }
