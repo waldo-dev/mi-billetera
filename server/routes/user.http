@@ -1,0 +1,28 @@
+###
+
+GET http://localhost:8000/api/user/
+
+###
+
+GET http://localhost:8000/api/user/629454050928b397c19cf9c0
+
+
+###
+
+POST http://localhost:8000/api/user/signin
+Content-Type: application/json
+
+{
+    "email": "waldojavier.vo@gmail.com",
+    "password": "pordouglas"
+}
+
+
+###
+
+PUT http://localhost:8000/api/user/629455975313c69abac4c92e/budget
+Content-Type: application/json
+
+{
+    "budget": "10000"
+}

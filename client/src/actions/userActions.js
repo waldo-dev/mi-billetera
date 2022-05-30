@@ -2,7 +2,10 @@ import axios from "axios";
 
 const register = async (data) => {
   try {
-    const newUser = await axios.post("http://localhost:8000/api/signup", data);
+    const newUser = await axios.post(
+      "http://localhost:8000/api/user/signup",
+      data
+    );
     return newUser;
   } catch (err) {
     console.error(err);
@@ -12,7 +15,10 @@ const register = async (data) => {
 
 const login = async (data) => {
   try {
-    const user = await axios.post("http://localhost:8000/api/signin", data);
+    const user = await axios.post(
+      "http://localhost:8000/api/user/signin",
+      data
+    );
     return user;
   } catch (err) {
     console.error(err);
@@ -22,7 +28,7 @@ const login = async (data) => {
 
 const logout = async () => {
   try {
-    await axios.post("http://localhost:8000/api/logout");
+    await axios.post("http://localhost:8000/api/user/logout");
     window.localStorage.clear();
   } catch (err) {
     console.error(err);

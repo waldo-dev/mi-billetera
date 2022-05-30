@@ -1,0 +1,20 @@
+###
+POST http://localhost:8000/api/expense/new 
+Content-Type: application/json
+
+{
+    "name": "comer",
+    "price": "2000",
+    "userId": "62944690ed135b2a50d91cdf"
+}
+
+### 
+
+POST http://localhost:8000/api/expense/new 
+Content-Type: application/json
+
+{
+    "name": "dormir",
+    "price": "2000",
+    "userId": "62944c96d22fec1fe7690f21"
+}

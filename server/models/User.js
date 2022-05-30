@@ -22,6 +22,16 @@ const UserSchema = new Schema(
       required: [true, 'Password is required'],
       minlength: [8, 'Contraseña debe tener más de 8 caracteres'],
     },
+    expenses: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Expense',
+      },
+    ],
+    budget: {
+      type: String,
+      default: '0',
+    },
     scripts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Script' }],
   },
   { timestamps: true }
@@ -47,5 +57,5 @@ UserSchema.pre('save', function (next) {
   else next();
 });
 
-const User = model('users', UserSchema);
+const User = model('User', UserSchema);
 module.exports = { User };
