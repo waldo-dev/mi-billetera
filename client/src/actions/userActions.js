@@ -1,4 +1,5 @@
 import axios from "axios";
+axios.defaults.withCredentials = true;
 
 const register = async (data) => {
   try {
@@ -28,11 +29,24 @@ const login = async (data) => {
 
 const logout = async () => {
   try {
-    await axios.post("http://localhost:8000/api/user/logout");
+    await axios.post("http://localhost:8000/api/user/logout", {
+      withCredentials: true,
+    });
     window.localStorage.clear();
   } catch (err) {
     console.error(err);
   }
 };
 
-export { register, login, logout };
+const getUser = async (id) => {
+  try {
+    const user = await axios.get(`http://localhost:8000/api/user/${id}`, {
+      withCredentials: true,
+    });
+    return user;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export { register, login, logout, getUser };

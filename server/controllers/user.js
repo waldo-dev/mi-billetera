@@ -1,7 +1,7 @@
-const { User } = require('../models/User');
-const bcrypt = require('bcrypt');
-const { SECRET } = process.env;
-const jwt = require('jsonwebtoken');
+const { User } = require("../models/User");
+const bcrypt = require("bcrypt");
+const SECRET = process.env.SECRET;
+const jwt = require("jsonwebtoken");
 
 const register = async (req, res) => {
   try {
@@ -9,7 +9,7 @@ const register = async (req, res) => {
     await user.save();
     const jwtToken = jwt.sign({ _id: user._id }, SECRET);
     return res
-      .cookie('usertoken', jwtToken, SECRET, {
+      .cookie("usertoken", jwtToken, SECRET, {
         httpOnly: true,
       })
       .json({ email: user.email, _id: user._id });
@@ -25,28 +25,22 @@ const login = async (req, res) => {
     if (user === null) {
       res
         .status(400)
-        .json({ errors: { error: { message: 'User not exist' } } });
+        .json({ errors: { error: { message: "User not exist" } } });
     }
 
     const correctPassword = await bcrypt.compare(password, user.password);
 
     if (!correctPassword) {
       res.status(400).json({
-        errors: { error: { message: 'Password incorrect' } },
+        errors: { error: { message: "Password incorrect" } },
       });
     }
 
     const userToken = jwt.sign({ _id: user._id }, SECRET);
 
-    res
-      .cookie('usertoken', userToken, SECRET, {
-        httpOnly: true,
-      })
-      .json({
-        email: user.email,
-        _id: user._id,
-        name: user.name,
-      });
+    return res
+      .cookie("usertoken", userToken, SECRET, { httpOnly: true })
+      .json({ email: user.email, _id: user._id });
   } catch (err) {
     console.error(err);
   }
@@ -54,7 +48,7 @@ const login = async (req, res) => {
 
 const logout = async (req, res) => {
   try {
-    res.clearCookie('usertoken');
+    res.clearCookie("usertoken");
     res.json({ success: true });
   } catch (err) {
     console.error(err);
@@ -64,7 +58,7 @@ const logout = async (req, res) => {
 
 const getAllUsers = async (req, res) => {
   try {
-    const users = await User.find({}).populate('expenses');
+    const users = await User.find({}).populate("expenses");
     res.json({ users });
   } catch (err) {
     console.error(err);
@@ -74,7 +68,7 @@ const getAllUsers = async (req, res) => {
 const getUser = async (req, res) => {
   try {
     const { id } = req.params;
-    const user = await User.findById(id).populate('expenses');
+    const user = await User.findById(id).populate("expenses");
     res.json(user);
   } catch (err) {
     console.error(err);

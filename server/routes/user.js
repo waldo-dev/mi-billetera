@@ -6,7 +6,7 @@ router.post('/signup', controller.register);
 router.post('/signin', controller.login);
 router.post('/logout', controller.logout);
 router.get('/', controller.getAllUsers);
-router.get('/:id', controller.getUser);
+router.get('/:id', authenticate, controller.getUser);
 router.put('/:id/budget', controller.addBudget);
 
 module.exports = router;

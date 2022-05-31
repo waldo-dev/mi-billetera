@@ -4,7 +4,8 @@ GET http://localhost:8000/api/user/
 
 ###
 
-GET http://localhost:8000/api/user/629454050928b397c19cf9c0
+GET http://localhost:8000/api/user/6294fc84feefc780929937fd
+
 
 
 ###
@@ -17,6 +18,9 @@ Content-Type: application/json
     "password": "pordouglas"
 }
 
+###
+
+POST http://localhost:8000/api/user/logout
 
 ###
 
@@ -26,3 +30,4 @@ Content-Type: application/json
 {
     "budget": "10000"
 }
+
