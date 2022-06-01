@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./LoginForm.module.css";
-import { login } from "../../actions/userActions";
+import { login } from "../../actions/actions";
 import { useGlobalContext } from "../../context/globalContext";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";

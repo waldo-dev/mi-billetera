@@ -40,7 +40,7 @@ const login = async (req, res) => {
 
     return res
       .cookie("usertoken", userToken, SECRET, { httpOnly: true })
-      .json({ email: user.email, _id: user._id });
+      .json({ name: user.name, _id: user._id });
   } catch (err) {
     console.error(err);
   }

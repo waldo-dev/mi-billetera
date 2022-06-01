@@ -49,4 +49,46 @@ const getUser = async (id) => {
   }
 };
 
-export { register, login, logout, getUser };
+const updateBudget = async (id, newBudget) => {
+  try {
+    const user = await getUser(id);
+    const { data } = user;
+    const budget = await axios.put(
+      `http://localhost:8000/api/user/${id}/budget`,
+      {
+        name: data.name,
+        _id: data._id,
+        email: data.email,
+        password: data.password,
+        expenses: data.expenses,
+        scripts: data.scripts,
+        budget: newBudget,
+      },
+      {
+        withCredentials: true,
+      }
+    );
+    return budget;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+const addExpense = async ({ expenseName, expensePrice, _id }) => {
+  try {
+    const newExpense = await axios.post(
+      "http://localhost:8000/api/expense",
+      {
+        name: expenseName,
+        price: expensePrice,
+        userId: _id,
+      },
+      { withCredentials: true }
+    );
+    return newExpense;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export { register, login, logout, getUser, updateBudget, addExpense };

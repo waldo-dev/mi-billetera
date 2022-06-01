@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./RegisterForm.module.css";
-import { register } from "../../actions/userActions";
+import { register } from "../../actions/actions";
 
 const RegisterForm = () => {
   const [name, setName] = useState("");

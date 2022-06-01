@@ -1,26 +1,45 @@
 .container{
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 4rem;
     background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+}
+
+.logo{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0.5rem;   
+}
+
+.userSettings{
+    display: flex;
+    width: 8rem;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .list{
     list-style: none;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.expandMore{
+    width: 2.5rem;
+    height: 3rem;
+    margin-top: 0.8rem;
+    cursor: pointer;
 }
 
 .itemListUser{
     font-size: 2rem;
     font-weight: 500;
     color: #ffffff;
-}
-
-.itemListLogo{
-    font-size: 2rem;
-    font-weight: 600;
-    color: #ffffff;
+    margin: 0 ;
 }
 
 .logoutButton{
@@ -30,4 +49,30 @@
     color: #ffffff;
     border: none;
     padding: 0.2rem 2rem ;
+}
+
+@media only screen and (max-width: 700px)  {
+    .container{
+        padding: 0.5rem 2rem;
+        background-color: blue;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 3rem;
+    }
+    .logo{
+        font-size: 1.5rem;
+    }  
+    .itemListUser{
+        font-size: 1.5rem;
+    }    
+    .expandMore{
+        width: 2rem;
+        height: 2.2rem;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+    }
+    .list{
+        margin: 0;
+    }
 }

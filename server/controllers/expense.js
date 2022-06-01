@@ -1,5 +1,5 @@
-const { Expense } = require('../models/Expense');
-const { User } = require('../models/User');
+const { Expense } = require("../models/Expense");
+const { User } = require("../models/User");
 
 const createExpense = async (req, res) => {
   try {
