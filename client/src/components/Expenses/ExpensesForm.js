@@ -7,15 +7,17 @@ const ExpensesForm = () => {
   const [expenseName, setExpenseName] = useState("");
   const [expensePrice, setExpensePrice] = useState("");
 
-  const { user } = useGlobalContext();
+  const { user, budget, setBudget } = useGlobalContext();
   const { _id } = user;
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(expenseName, expensePrice, _id);
-    addExpense({ expenseName, expensePrice, _id }).then((expense) =>
-      console.log(expense)
-    );
+    addExpense({ expenseName, expensePrice, _id });
+    const expensePriceNumber = Number(expensePrice);
+    const budgetToNumber = Number(budget);
+    let newBudget = budgetToNumber - expensePriceNumber;
+    newBudget = String(newBudget);
+    setBudget(newBudget);
   };
 
   return (

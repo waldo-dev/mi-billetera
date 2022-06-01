@@ -8,6 +8,8 @@ export const GlobalContextProvider = ({ children }) => {
   const [user, setUser] = useState(defaultUser);
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(true);
+  const [budget, setBudget] = useState("");
+  const [expenses, setExpenses] = useState([]);
 
   useEffect(() => {
     window.localStorage.setItem("user", JSON.stringify(user));
@@ -22,6 +24,10 @@ export const GlobalContextProvider = ({ children }) => {
         setShowLogin,
         showRegister,
         setShowRegister,
+        budget,
+        setBudget,
+        expenses,
+        setExpenses,
       }}
     >
       {children}

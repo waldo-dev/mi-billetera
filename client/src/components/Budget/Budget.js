@@ -5,17 +5,19 @@ import BudgetForm from "./BudgetForm";
 import style from "./Budget.module.css";
 
 const Budget = () => {
-  const [budget, setBudget] = useState("");
   const [showUpdateBudget, setShowUpdateBudget] = useState(false);
 
-  const { user } = useGlobalContext();
+  const { user, budget, setBudget, setExpenses } = useGlobalContext();
   const { _id } = user;
 
   useEffect(() => {
     if (_id) {
-      getUser(_id).then((result) => setBudget(result.data.budget));
+      getUser(_id).then((result) => {
+        setBudget(result.data.budget);
+        setExpenses(result.data.expenses);
+      });
     }
-  }, [_id, budget]);
+  }, [_id, setBudget, setExpenses]);
 
   return (
     <div className={style.container}>

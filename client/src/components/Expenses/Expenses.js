@@ -5,9 +5,7 @@ import { getUser } from "../../actions/actions";
 import { useGlobalContext } from "../../context/globalContext";
 
 const Expenses = () => {
-  const [expenses, setExpenses] = useState([]);
-
-  const { user } = useGlobalContext();
+  const { user, expenses, setExpenses } = useGlobalContext();
   const { _id } = user;
 
   useEffect(() => {

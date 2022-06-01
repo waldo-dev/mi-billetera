@@ -9,7 +9,7 @@ const BudgetForm = ({ setShowUpdateBudget }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateBudget(_id, budgetInput).then((result) => console.log(result));
+    updateBudget(_id, budgetInput);
     setShowUpdateBudget(false);
   };
 

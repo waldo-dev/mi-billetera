@@ -4,9 +4,7 @@ import { useGlobalContext } from "../../context/globalContext";
 import style from "./AllExpenses.module.css";
 
 const AllExpenses = () => {
-  const [expenses, setExpenses] = useState([]);
-
-  const { user } = useGlobalContext();
+  const { user, expenses, setExpenses } = useGlobalContext();
   const { _id } = user;
 
   useEffect(() => {
