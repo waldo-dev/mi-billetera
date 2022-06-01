@@ -74,8 +74,9 @@ const updateBudget = async (id, newBudget) => {
   }
 };
 
-const addExpense = async ({ expenseName, expensePrice, _id }) => {
+const addExpense = async (data) => {
   try {
+    const { expenseName, expensePrice, _id } = data;
     const newExpense = await axios.post(
       "http://localhost:8000/api/expense",
       {

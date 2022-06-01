@@ -12,9 +12,10 @@ const ExpensesForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //addExpense(expenseName, expensePrice, _id).then((expense) =>
-    //  console.log(expense)
-    //);
+    console.log(expenseName, expensePrice, _id);
+    addExpense({ expenseName, expensePrice, _id }).then((expense) =>
+      console.log(expense)
+    );
   };
 
   return (

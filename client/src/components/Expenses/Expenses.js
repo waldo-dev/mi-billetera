@@ -12,9 +12,12 @@ const Expenses = () => {
 
   useEffect(() => {
     if (_id) {
-      getUser(_id).then((result) => setExpenses(result.data.expenses));
+      getUser(_id).then((result) =>
+        setExpenses(result.data.expenses.reverse())
+      );
     }
   }, [_id, expenses]);
+
   return (
     <div className={style.container}>
       <ExpensesForm />
@@ -22,7 +25,13 @@ const Expenses = () => {
       <ul className={style.list}>
         {expenses.length
           ? expenses.map((expense, i) => {
-              if (i < 4) return <li key={i}>{expense}</li>;
+              if (i < 4) {
+                return (
+                  <li key={i}>
+                    <span>{expense.name} </span> <span>${expense.price}</span>
+                  </li>
+                );
+              }
             })
           : null}
       </ul>
