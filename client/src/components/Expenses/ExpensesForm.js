@@ -21,7 +21,7 @@ const ExpensesForm = () => {
   return (
     <>
       <p className={style.title}>Nuevo gasto</p>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form className={style.form} onSubmit={(e) => handleSubmit(e)}>
         <input
           type="text"
           placeholder="Nombre"
@@ -34,7 +34,9 @@ const ExpensesForm = () => {
           value={expensePrice}
           onChange={(e) => setExpensePrice(e.target.value)}
         />
-        <button onSubmit={(e) => handleSubmit(e)}>Agregar</button>
+        <button className={style.button} onSubmit={(e) => handleSubmit(e)}>
+          Agregar
+        </button>
       </form>
     </>
   );

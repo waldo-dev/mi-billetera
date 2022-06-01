@@ -13,6 +13,14 @@ const Navbar = () => {
   const styles = {
     itemList: {
       display: itemListHidden,
+      margin: 0,
+      color: "0x000000",
+      textDecoration: "none",
+    },
+    logout: {
+      display: itemListHidden,
+      margin: 0,
+      cursor: "pointer",
     },
   };
 
@@ -31,7 +39,9 @@ const Navbar = () => {
 
   return (
     <div className={style.container}>
-      <h3 className={style.logo}>Mi Billetera</h3>
+      <Link to="/" className={style.logo}>
+        Mi Billetera
+      </Link>
       <div className={style.userSettings}>
         <p className={style.itemListUser}>{user ? user.name : null}</p>
         <img
@@ -47,12 +57,12 @@ const Navbar = () => {
           }}
         />
         <ul className={style.list}>
-          <Link style={styles.itemList} to="/">
+          <Link style={styles.itemList} to="/expenses">
             Mis gastos
           </Link>
-          <Link style={styles.itemList} to="/">
-            Mis listas
-          </Link>
+          <p style={styles.logout} onClick={() => handleLogout()}>
+            Logout
+          </p>
         </ul>
       </div>
     </div>

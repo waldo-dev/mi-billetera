@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import ExpensesForm from "./ExpensesForm";
-import style from "./Expenses.module.css";
 import { getUser } from "../../actions/actions";
 import { useGlobalContext } from "../../context/globalContext";
+import style from "./AllExpenses.module.css";
 
-const Expenses = () => {
+const AllExpenses = () => {
   const [expenses, setExpenses] = useState([]);
 
   const { user } = useGlobalContext();
@@ -19,19 +18,16 @@ const Expenses = () => {
   }, [_id, expenses]);
 
   return (
-    <div className={style.container}>
-      <ExpensesForm />
-      <p className={style.title}>Ultimos gastos</p>
+    <div>
+      <h3>Mis Gastos</h3>
       <ul className={style.list}>
         {expenses.length
           ? expenses.map((expense, i) => {
-              if (i < 4) {
-                return (
-                  <li key={i}>
-                    <span>{expense.name}: </span> <span>${expense.price}</span>
-                  </li>
-                );
-              }
+              return (
+                <li key={i}>
+                  <span>{expense.name}: </span> <span>${expense.price}</span>
+                </li>
+              );
             })
           : null}
       </ul>
@@ -39,4 +35,4 @@ const Expenses = () => {
   );
 };
 
-export default Expenses;
+export default AllExpenses;
